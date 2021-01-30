@@ -9,7 +9,7 @@ from flask import (Flask, Response, abort, jsonify, make_response,
 
 try:
     from scrapers import feed_gen, scrapers
-except:
+except Exception:
     from app.scrapers import feed_gen, scrapers
 
 DISABLE_CACHE = True  # Temporarily disable the MongoDB cache
