@@ -77,9 +77,9 @@ class Yahoo(Scraper):
         for h in soup.findAll('li', attrs={'class': 'ld'}):
             t = h.find('a')
             r = t.get('aria-label')
-            cleanr = re.compile('<.*?>')
+            cleanr = re.compile(r'<.*?>')
             r = re.sub(cleanr, '', r)
-            cleanl = re.compile('&#[\d]+(;)')
+            cleanl = re.compile(r'&#[\d]+(;)')
             r = re.sub(cleanl, '\'', r)
             img = t.find('img', attrs={'class': 'process'})
             url = img.get('data-src')
